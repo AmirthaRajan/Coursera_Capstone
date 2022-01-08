@@ -1,0 +1,146 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- deny
+- location
+- restaurant_search
+- email
+- greet
+- thank
+- goodbye
+- stop
+entities:
+- cuisine
+- email
+- location
+- price
+slots:
+  cuisine:
+    type: text
+    influence_conversation: true
+  location:
+    type: text
+    influence_conversation: true
+  check_location:
+    type: bool
+    influence_conversation: true
+  price:
+    type: categorical
+    influence_conversation: true
+    values:
+    - low
+    - moderate
+    - high
+  check_cuisine:
+    type: bool
+    influence_conversation: true
+  email:
+    type: text
+    influence_conversation: true
+  check_results:
+    type: bool
+    influence_conversation: true
+  ask_email:
+    type: bool
+    influence_conversation: true
+  location_rerun:
+    type: bool
+    influence_conversation: true
+responses:
+  utter_ask_cuisine:
+  - buttons:
+    - payload: Chinese
+      title: Chinese
+    - payload: Italian
+      title: Italian
+    - payload: South Indian
+      title: South Indian
+    - payload: North Indian
+      title: North Indian
+    - payload: Mexican
+      title: Mexican
+    - payload: American
+      title: American
+    text: what kind of cuisine would you like?
+  utter_ask_price:
+  - buttons:
+    - payload: low
+      title: Lesser than Rs. 300
+    - payload: moderate
+      title: Rs. 300 to 700
+    - payload: high
+      title: More than 700
+    text: What price range are you looking at?
+  utter_ask_howcanhelp:
+  - text: how can I help you?
+  utter_ask_top10list:
+  - buttons:
+    - payload: yes
+      title: yes
+    - payload: no
+      title: no
+    text: Do you want me to send the details of these top 10 restaurants over mail ?
+  utter_ask_email:
+  - text: Please provide your email id?
+  utter_ask_location:
+  - text: In what location?
+  - text: What location are you looking in ?
+  utter_default:
+  - text: i cannot understand
+  utter_goodbye:
+  - text: Thank you. Bye!! Bon Appetit!
+  - text: okay. Happy Dining! bye..
+  - text: Thanks for using our service. Have a great day, bye
+  utter_goodbye_no_result:
+  - text: Bye. Thank you!
+  - text: bye-bye
+  utter_greet:
+  - text: hey there! How may i help you
+  - text: Hi, How can I help you!
+  - text: Hey, How is it going. How May I help you Today
+  utter_location:
+  - text: Sorry, we don't operate at this location
+  - text: Sorry, we don't provide service to this location
+  - text: We don't operate in that area yet! :(
+  utter_email_sent:
+  - text: Mail Sent.
+  - text: Sent!!
+  utter_no_result:
+  - text: There are no restaurants available for the given search
+  - text: Sorry I can't find any restaurants for the given search
+  utter_deny:
+  - text: Sorry, hope to serve you better next time.
+  utter_ask_location_rerun:
+  - text: Would you like to search for some other location?
+  - text: Can I help you look for a restaurant at some other location?
+  utter_location_no_result:
+  - text: Sorry, we do not serve at the requested location.
+  utter_ask_cuisine_rerun:
+  - text: Would you like to search for some other cuisine?
+  - text: Can I help you look for some other cuisine today?
+actions:
+- action_check_cuisine
+- action_check_location
+- action_check_price
+- action_search_restaurants
+- action_send_mail
+- utter_ask_cuisine
+- utter_ask_cuisine_rerun
+- utter_ask_email
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_location_rerun
+- utter_ask_price
+- utter_ask_top10list
+- utter_default
+- utter_deny
+- utter_email_sent
+- utter_goodbye
+- utter_goodbye_no_result
+- utter_greet
+- utter_location
+- utter_location_no_result
+- utter_no_result

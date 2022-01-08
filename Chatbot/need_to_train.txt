@@ -1,0 +1,42 @@
+Your input ->  get me a chinese cuisine restaurants in madres at a higher price range                                                       
+Sorry, we don't operate at this location
+Can I help you look for a restaurant at some other location?
+Your input ->  yes                                                                                                                          
+In what location?
+Your input ->  madras                                                                                                                       
+? What price range are you looking at?  (Use arrow keys)                                                                                    
+ » 1: Lesser than Rs. 300 (low)
+   2: Rs. 300 to 700 (moderate)
+   3: More than 700 (high)
+   Type out your own message...  
+
+
+
+Your input ->  get me high cost restaurant in madrs                                                                                          
+Sorry, we don't provide service to this location
+Can I help you look for a restaurant at some other location?
+Your input ->  yes                                                                                                                          
+What location are you looking in ?
+Your input ->  in madras                                                                                                                    
+? what kind of cuisine would you like?  3: South Indian (South Indian)                                                                      
+? What price range are you looking at?  (Use arrow keys)                                                                                    
+ » 1: Lesser than Rs. 300 (low)
+   2: Rs. 300 to 700 (moderate)
+   3: More than 700 (high)
+   Type out your own message...
+
+
+Your input ->  hi                                                                                                                           
+Hi, How can I help you!
+Your input ->  get me high cost restaurant                                                                                                  
+In what location?
+Your input ->  in madrs                                                                                                                     
+Sorry, we don't operate at this location
+Can I help you look for a restaurant at some other location?
+Your input ->  sorry in madras                                                                                                              
+? what kind of cuisine would you like?  4: North Indian (North Indian)                                                                      
+? What price range are you looking at?  (Use arrow keys)                                                                                    
+ » 1: Lesser than Rs. 300 (low)
+   2: Rs. 300 to 700 (moderate)
+   3: More than 700 (high)
+   Type out your own message...

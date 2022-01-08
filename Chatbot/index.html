@@ -1,0 +1,808 @@
+<html>
+      <body style="
+      background-color: #212121;
+      color: white;
+  ">
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 1&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>Chat History
+
+ #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                           <font color="#F66151" size='5'>You       </font> 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 1    <font color="#33C7DE">action_listen</font>                                                                                                                 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 2                                                                                                                               <font color="#F66151">hi</font> 
+                                                                                                                 intent: greet 1.00 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 1.00</font>                                                                                                              
+      <font color="#2A7BDE">Hey, How is it going. How May I help you Today</font>                                                                                
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 4                                                                                         <font color="#F66151">I am looking for some restaurants nearby</font> 
+                                                                                                     intent: restaurant_search 1.00 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 5    <font color="#33C7DE">utter_ask_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+      <font color="#2A7BDE">In what location?</font>                                                                                                             
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 6                                                                             <font color="#F66151">in [mumbai]{&quot;entity&quot;: &quot;location&quot;, &quot;value&quot;: &quot;Mumbai&quot;}</font> 
+                                                                                                              intent: location 1.00 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 7    slot{&quot;location&quot;: &quot;Mumbai&quot;}                                                                                                    
+      <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                    
+      slot{&quot;check_location&quot;: true}                                                                                                  
+      <font color="#33C7DE">utter_ask_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                        
+      <font color="#2A7BDE">what kind of cuisine would you like?                                                                                          </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                      </font>
+<font color="#2A7BDE">      1: Chinese (Chinese)                                                                                                          </font>
+<font color="#2A7BDE">      2:                                                                                                                            </font>
+<font color="#2A7BDE">      Italian (Italian)                                                                                                             </font>
+<font color="#2A7BDE">      3: South Indian (South Indian)                                                                                                </font>
+<font color="#2A7BDE">      4: North Indian                                                                                                               </font>
+<font color="#2A7BDE">      (North Indian)                                                                                                                </font>
+<font color="#2A7BDE">      5: Mexican (Mexican)                                                                                                          </font>
+<font color="#2A7BDE">      6: American (American)                                                                                                        </font>
+<font color="#2A7BDE">      Type out                                                                                                                      </font>
+<font color="#2A7BDE">      your own message...</font>                                                                                                           
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 8                                                                                                   <font color="#F66151">i&apos;ll prefer [chinese](cuisine)</font> 
+                                                                                                     intent: restaurant_search 1.00 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 9    slot{&quot;cuisine&quot;: &quot;chinese&quot;}                                                                                                    
+      <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                     
+      slot{&quot;check_cuisine&quot;: true}                                                                                                   
+      <font color="#33C7DE">utter_ask_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+      <font color="#2A7BDE">What price range are you looking at?                                                                                          </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                      </font>
+<font color="#2A7BDE">      1: Lesser than Rs. 300                                                                                                        </font>
+<font color="#2A7BDE">      (low)                                                                                                                         </font>
+<font color="#2A7BDE">      2: Rs. 300 to 700 (moderate)                                                                                                  </font>
+<font color="#2A7BDE">      3: More than 700 (high)                                                                                                       </font>
+<font color="#2A7BDE">      Type out                                                                                                                      </font>
+<font color="#2A7BDE">      your own message...</font>                                                                                                           
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 10                                                                                 <font color="#F66151">[above 700]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;high&quot;}</font> 
+                                                                                                     intent: restaurant_search 1.00 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 11   slot{&quot;price&quot;: &quot;high&quot;}                                                                                                         
+      <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+      <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                
+      <font color="#2A7BDE">-----  The Fusion Kitchen in Shop 1, Opposite Veda Building, Near                                                             </font>
+<font color="#2A7BDE">      Bhavdevi Garage, Holy Cross Road, IC colony, Borivali West, Mumbai                                                            </font>
+<font color="#2A7BDE">      rated 4.7                                                                                                                     </font>
+<font color="#2A7BDE">                                                                                                                                    </font>
+<font color="#2A7BDE">       Yauatcha in Raheja Tower, Bandra Kurla Complex, Mumbai                                                                       </font>
+<font color="#2A7BDE">      rated 4.6                                                                                                                     </font>
+<font color="#2A7BDE">                                                                                                                                    </font>
+<font color="#2A7BDE">       Butterfly High in Unit 4, Ground Floor, Jet Airways,                                                                         </font>
+<font color="#2A7BDE">      Godrej G Block, Near MCA, Bandra Kurla Complex, Mumbai rated 4.3                                                              </font>
+<font color="#2A7BDE">      BKC  DIVE in Ground Floor, Pinnacle Corporate Park, Opposite MTNL                                                             </font>
+<font color="#2A7BDE">      Office, Bandra Kurla Complex, Mumbai rated 4.2                                                                                </font>
+<font color="#2A7BDE">                                                                                                                                    </font>
+<font color="#2A7BDE">       Bayview Cafe in                                                                                                              </font>
+<font color="#2A7BDE">      Hotel Harbour View, Kerawala Chamber, Opposite Radio Club, 25, J P                                                            </font>
+<font color="#2A7BDE">      Ramchandani Marg, Colaba, Mumbai rated 4.2                                                                                    </font>
+<font color="#2A7BDE">                                                                                                                                    </font>
+<font color="#2A7BDE">       -----</font>                                                                                                                        
+      slot{&quot;check_results&quot;: true}                                                                                                   
+      <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                      
+      <font color="#2A7BDE">Do you want me to send the details of these top 10 restaurants over                                                           </font>
+<font color="#2A7BDE">      mail ?                                                                                                                        </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                      </font>
+<font color="#2A7BDE">      1: yes (yes)                                                                                                                  </font>
+<font color="#2A7BDE">      2: no (no)                                                                                                                    </font>
+<font color="#2A7BDE">      Type out your own message...</font>                                                                                                  
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 12                                                                                                               <font color="#F66151">please send it to </font>
+<font color="#F66151">                                                                                [upgrad.restaurant.search.chatbot@gmail.com](email)</font> 
+                                                                                                                 intent: email 1.00 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 13   slot{&quot;email&quot;: &quot;upgrad.restaurant.search.chatbot@gmail.com&quot;}                                                                   
+      <font color="#33C7DE">action_send_mail</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+      <font color="#2A7BDE">Sent!!</font>                                                                                                                        
+      <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 0.80</font>                                                                                                            
+      <font color="#2A7BDE">Thank you. Bon Appetit!</font>                                                                                                       
+
+
+</pre></center>
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 2&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+ 
+<center><pre>Chat History
+
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                              <font color="#F66151" size='5'>You       </font> 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                                    
+                                                                                                                        
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                                                                                                  <font color="#F66151">hi</font> 
+                                                                                                                       intent: greet 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 0.99</font>                                                                                                                 
+         <font color="#2A7BDE">hey there! How may i help you</font>                                                                                                    
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                        <font color="#F66151">Can you suggest some good restaurants in [kolkata]{&quot;entity&quot;: &quot;location&quot;, &quot;value&quot;: &quot;Kolkata&quot;}</font> 
+                                                                                                                    intent: location 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;location&quot;: &quot;Kolkata&quot;}                                                                                                      
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+         slot{&quot;check_location&quot;: true}                                                                                                     
+         <font color="#33C7DE">utter_ask_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                           
+         <font color="#2A7BDE">what kind of cuisine would you                                                                                                   </font>
+   <font color="#2A7BDE">      like?                                                                                                                            </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: Chinese                                                                                                                       </font>
+   <font color="#2A7BDE">      (Chinese)                                                                                                                        </font>
+   <font color="#2A7BDE">      2: Italian (Italian)                                                                                                             </font>
+   <font color="#2A7BDE">      3: South Indian (South Indian)                                                                                                   </font>
+   <font color="#2A7BDE">      4: North Indian (North Indian)                                                                                                   </font>
+   <font color="#2A7BDE">      5: Mexican (Mexican)                                                                                                             </font>
+   <font color="#2A7BDE">      6:                                                                                                                               </font>
+   <font color="#2A7BDE">      American (American)                                                                                                              </font>
+   <font color="#2A7BDE">      Type out                                                                                                                         </font>
+   <font color="#2A7BDE">      your own message...</font>                                                                                                              
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                                             <font color="#F66151">i would like [mexican](cuisine) cuisine</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    slot{&quot;cuisine&quot;: &quot;mexican&quot;}                                                                                                       
+         <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                        
+         slot{&quot;check_cuisine&quot;: true}                                                                                                      
+         <font color="#33C7DE">utter_ask_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                             
+         <font color="#2A7BDE">What price range are you                                                                                                         </font>
+   <font color="#2A7BDE">      looking at?                                                                                                                      </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: Lesser                                                                                                                        </font>
+   <font color="#2A7BDE">      than Rs. 300 (low)                                                                                                               </font>
+   <font color="#2A7BDE">      2: Rs. 300                                                                                                                       </font>
+   <font color="#2A7BDE">      to 700 (moderate)                                                                                                                </font>
+   <font color="#2A7BDE">      3: More than                                                                                                                     </font>
+   <font color="#2A7BDE">      700 (high)                                                                                                                       </font>
+   <font color="#2A7BDE">      Type out your own                                                                                                                </font>
+   <font color="#2A7BDE">      message...</font>                                                                                                                       
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    8                                                                              <font color="#F66151">[greater than 700]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;high&quot;}</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    9    slot{&quot;price&quot;: &quot;high&quot;}                                                                                                            
+         <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+         <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                   
+         <font color="#2A7BDE">-----  Gabbar&apos;s Bar &amp; Kitchen                                                                                                    </font>
+   <font color="#2A7BDE">      in 11/1, Ho Chi Minh Sarani,                                                                                                     </font>
+   <font color="#2A7BDE">      Camac Street Area, Kolkata                                                                                                       </font>
+   <font color="#2A7BDE">      rated 4.4                                                                                                                        </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       Hoppipola in 4th                                                                                                                </font>
+   <font color="#2A7BDE">      Floor, Acropolis Mall, 1858/1,                                                                                                   </font>
+   <font color="#2A7BDE">      Rajdanga Main Road, Kasba,                                                                                                       </font>
+   <font color="#2A7BDE">      Kolkata rated 4.2                                                                                                                </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       -----</font>                                                                                                                           
+         slot{&quot;check_results&quot;: true}                                                                                                      
+         <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+         <font color="#2A7BDE">Do you want me to send the                                                                                                       </font>
+   <font color="#2A7BDE">      details of these top 10                                                                                                          </font>
+   <font color="#2A7BDE">      restaurants over mail ?                                                                                                          </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: yes (yes)                                                                                                                     </font>
+   <font color="#2A7BDE">      2: no                                                                                                                            </font>
+   <font color="#2A7BDE">      (no)                                                                                                                             </font>
+   <font color="#2A7BDE">      Type out your own                                                                                                                </font>
+   <font color="#2A7BDE">      message...</font>                                                                                                                       
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    10                                                                                                                          <font color="#F66151">no thanks</font> 
+                                                                                                                        intent: deny 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    11   <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+         <font color="#2A7BDE">Thanks for using our service.                                                                                                    </font>
+   <font color="#2A7BDE">      Have a great day, bye</font>                                                                                                            
+   
+   
+   </pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 3&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>Chat History
+
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                              <font color="#F66151" size='5'>You       </font> 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                                    
+                                                                                                                        
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                                 <font color="#F66151">hey! Can you get me some restaurants of [american](cuisine) cuisine</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    slot{&quot;cuisine&quot;: &quot;american&quot;}                                                                                                      
+         <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                        
+         slot{&quot;check_cuisine&quot;: true}                                                                                                      
+         <font color="#33C7DE">utter_ask_location</font><font color="#FFFFFF"> 0.89</font>                                                                                                          
+         <font color="#2A7BDE">In what location?</font>                                                                                                                
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                                                                                                <font color="#F66151">in [Kochi](location)</font> 
+                                                                                                                    intent: location 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;location&quot;: &quot;Kochi&quot;}                                                                                                        
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+         slot{&quot;check_location&quot;: true}                                                                                                     
+         <font color="#33C7DE">utter_ask_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                             
+         <font color="#2A7BDE">What price range are you looking at?                                                                                             </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: Lesser                                                                                                                        </font>
+   <font color="#2A7BDE">      than Rs. 300 (low)                                                                                                               </font>
+   <font color="#2A7BDE">      2: Rs. 300 to 700 (moderate)                                                                                                     </font>
+   <font color="#2A7BDE">      3: More                                                                                                                          </font>
+   <font color="#2A7BDE">      than 700 (high)                                                                                                                  </font>
+   <font color="#2A7BDE">      Type out your own message...</font>                                                                                                     
+         <font color="#33C7DE">action_listen</font>                                                                                                                    
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                                      <font color="#F66151">[below 300]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;low&quot;}</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    slot{&quot;price&quot;: &quot;low&quot;}                                                                                                             
+         <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+         <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                   
+         <font color="#2A7BDE">----- no results -----</font>                                                                                                           
+         slot{&quot;check_results&quot;: false}                                                                                                     
+         <font color="#33C7DE">utter_no_result</font><font color="#FFFFFF"> 1.00</font>                                                                                                             
+         <font color="#2A7BDE">Sorry I can&apos;t find any restaurants for the given search</font>                                                                          
+                                                                                                                        
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    8                                                                                                                           <font color="#F66151">thank you</font> 
+                                                                                                                       intent: thank 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    9    <font color="#33C7DE">utter_goodbye_no_result</font><font color="#FFFFFF"> 1.00</font>                                                                                                     
+         <font color="#2A7BDE">Bye. Thank you!</font>                                                                                                                  
+   
+   
+   </pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 4&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>Chat History
+
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                              <font color="#F66151" size='5'>You       </font> 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                                    
+                                                                                                                        
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                    <font color="#F66151">please find me some hotels at [cheaper]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;low&quot;} price</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    slot{&quot;price&quot;: &quot;low&quot;}                                                                                                             
+         <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+         <font color="#33C7DE">utter_ask_location</font><font color="#FFFFFF"> 0.97</font>                                                                                                          
+         <font color="#2A7BDE">What location are you looking in ?</font>                                                                                               
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                                                                                          <font color="#F66151">search in [Agra](location)</font> 
+                                                                                                                    intent: location 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;location&quot;: &quot;Agra&quot;}                                                                                                         
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+         slot{&quot;check_location&quot;: true}                                                                                                     
+         <font color="#33C7DE">utter_ask_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                           
+         <font color="#2A7BDE">what kind of cuisine would you like?                                                                                             </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: Chinese (Chinese)                                                                                                             </font>
+   <font color="#2A7BDE">      2: Italian                                                                                                                       </font>
+   <font color="#2A7BDE">      (Italian)                                                                                                                        </font>
+   <font color="#2A7BDE">      3: South Indian (South Indian)                                                                                                   </font>
+   <font color="#2A7BDE">      4: North Indian (North Indian)                                                                                                   </font>
+   <font color="#2A7BDE">      5: Mexican                                                                                                                       </font>
+   <font color="#2A7BDE">      (Mexican)                                                                                                                        </font>
+   <font color="#2A7BDE">      6: American (American)                                                                                                           </font>
+   <font color="#2A7BDE">      Type out                                                                                                                         </font>
+   <font color="#2A7BDE">      your own message...</font>                                                                                                              
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                        <font color="#F66151">[North Indian]{&quot;entity&quot;: &quot;cuisine&quot;, &quot;value&quot;: &quot;north indian&quot;}</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    slot{&quot;cuisine&quot;: &quot;north indian&quot;}                                                                                                  
+         <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                        
+         slot{&quot;check_cuisine&quot;: true}                                                                                                      
+         <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                   
+         <font color="#2A7BDE">-----  Sheroes Hangout in Opposite The                                                                                           </font>
+   <font color="#2A7BDE">      Gateway Hotel, Fatehabad Road, Tajganj,                                                                                          </font>
+   <font color="#2A7BDE">      Agra rated 4.9                                                                                                                   </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       Papa Ji Da Dhaba in                                                                                                             </font>
+   <font color="#2A7BDE">      Delhi Gate, Raja Mandi Station Road, Civil                                                                                       </font>
+   <font color="#2A7BDE">      Lines, Agra rated 4.2                                                                                                            </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       The Latitude -                                                                                                                  </font>
+   <font color="#2A7BDE">      Radisson Blu in Radisson Blu, Taj East                                                                                           </font>
+   <font color="#2A7BDE">      Gate Road, Tajganj, Agra rated 3.9                                                                                               </font>
+   <font color="#2A7BDE">      Chapter 1 Cafe in 1374 K/1375 K, 2nd                                                                                             </font>
+   <font color="#2A7BDE">      floor, Dinesh Nagar, Fatehbad Road,                                                                                              </font>
+   <font color="#2A7BDE">      Tajganj, Agra rated 3.9                                                                                                          </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       -----</font>                                                                                                                           
+         slot{&quot;check_results&quot;: true}                                                                                                      
+         <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+         <font color="#2A7BDE">Do you want me to send the details of                                                                                            </font>
+   <font color="#2A7BDE">      these top 10 restaurants over mail ?                                                                                             </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: yes (yes)                                                                                                                     </font>
+   <font color="#2A7BDE">      2: no (no)                                                                                                                       </font>
+   <font color="#2A7BDE">      Type out                                                                                                                         </font>
+   <font color="#2A7BDE">      your own message...</font>                                                                                                              
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    8                                                                                                                           <font color="#F66151">no thanks</font> 
+                                                                                                                        intent: deny 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    9    <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+         <font color="#2A7BDE">okay. Happy Dining!</font>                                                                                                              
+   
+   
+   </pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 5&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>Chat History
+
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                              <font color="#F66151" size='5'>You       </font> 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                                    
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                                                                                            <font color="#F66151">hi there</font> 
+                                                                                                                       intent: greet 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 1.00</font>                                                                                                                 
+         <font color="#2A7BDE">Hey, How is it going. How May I help you Today</font>                                                                                   
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                                               <font color="#F66151">i am searching for [northindian]{&quot;entity&quot;: &quot;cuisine&quot;, &quot;value&quot;: &quot;north </font>
+   <font color="#F66151">                                                                                           indian&quot;} restaurants in [gangtak](location)</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;cuisine&quot;: &quot;north indian&quot;}                                                                                                  
+         slot{&quot;location&quot;: &quot;gangtak&quot;}                                                                                                      
+         <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 0.59</font>                                                                                                        
+         slot{&quot;check_cuisine&quot;: true}                                                                                                      
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+         <font color="#2A7BDE">We didn’t find any such location. Did you mean                                                                                   </font>
+   <font color="#2A7BDE">      gangtok ?</font>                                                                                                                        
+         slot{&quot;check_location&quot;: false}                                                                                                    
+         slot{&quot;location&quot;: &quot;gangtok&quot;}                                                                                                      
+         slot{&quot;location_rerun&quot;: false}                                                                                                    
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                                                                                 <font color="#F66151">yes</font> 
+                                                                                                                      intent: affirm 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+         slot{&quot;check_location&quot;: true}                                                                                                     
+         <font color="#33C7DE">utter_ask_price</font><font color="#FFFFFF"> 0.98</font>                                                                                                             
+         <font color="#2A7BDE">What price range are you looking at?                                                                                             </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1:                                                                                                                               </font>
+   <font color="#2A7BDE">      Lesser than Rs. 300 (low)                                                                                                        </font>
+   <font color="#2A7BDE">      2: Rs. 300 to 700                                                                                                                </font>
+   <font color="#2A7BDE">      (moderate)                                                                                                                       </font>
+   <font color="#2A7BDE">      3: More than 700 (high)                                                                                                          </font>
+   <font color="#2A7BDE">      Type out your own                                                                                                                </font>
+   <font color="#2A7BDE">      message...</font>                                                                                                                       
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    8                                                        <font color="#F66151">can you get me an [expensive]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;high&quot;} restaurant</font> 
+                                                                                                           intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    9    slot{&quot;price&quot;: &quot;high&quot;}                                                                                                            
+         <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+         <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                   
+         <font color="#2A7BDE">-----  Osm Restaurant in Second Floor, Norbula                                                                                   </font>
+   <font color="#2A7BDE">      Complex, MG Marg, Vishal Gaon, Gangtok rated                                                                                     </font>
+   <font color="#2A7BDE">      4.2                                                                                                                              </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       Cafe Live &amp; Loud in Tibet Road,                                                                                                 </font>
+   <font color="#2A7BDE">      Arithang, Gangtok rated 3.6                                                                                                      </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       Sher e Punjab                                                                                                                   </font>
+   <font color="#2A7BDE">      in Hotel Sher e Punjab, NH 10, Way to Rashmi                                                                                     </font>
+   <font color="#2A7BDE">      Prasad Alley Marg rated 3.6                                                                                                      </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       Sass &amp; Guff in                                                                                                                  </font>
+   <font color="#2A7BDE">      New Market, MG Marg, Vishal Gaon, Gangtok                                                                                        </font>
+   <font color="#2A7BDE">      rated 3.5                                                                                                                        </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       The Square in New Market, MG                                                                                                    </font>
+   <font color="#2A7BDE">      Marg, Vishal Gaon, Gangtok rated 2.9                                                                                             </font>
+   <font color="#2A7BDE">                                                                                                                                       </font>
+   <font color="#2A7BDE">       -----</font>                                                                                                                           
+         slot{&quot;check_results&quot;: true}                                                                                                      
+         <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+         <font color="#2A7BDE">Do you want me to send the details of these                                                                                      </font>
+   <font color="#2A7BDE">      top 10 restaurants over mail ?                                                                                                   </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+   <font color="#2A7BDE">      1: yes                                                                                                                           </font>
+   <font color="#2A7BDE">      (yes)                                                                                                                            </font>
+   <font color="#2A7BDE">      2: no (no)                                                                                                                       </font>
+   <font color="#2A7BDE">      Type out your own message...</font>                                                                                                     
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    10                                                                                                                                <font color="#F66151">yes</font> 
+                                                                                                                      intent: affirm 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    11   <font color="#33C7DE">utter_ask_email</font><font color="#FFFFFF"> 0.98</font>                                                                                                             
+         <font color="#2A7BDE">Please provide your email id?</font>                                                                                                    
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    12                                                                                                     <font color="#F66151">[testemail@hotmail.com](email)</font> 
+                                                                                                                       intent: email 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    13   slot{&quot;email&quot;: &quot;testemail@hotmail.com&quot;}                                                                                           
+         <font color="#33C7DE">action_send_mail</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+         <font color="#2A7BDE">Mail Sent.</font>                                                                                                                       
+   
+   
+   </pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 6&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+   <center><pre>
+ #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                             <font color="#F66151" size='5'>You       </font> 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 1    <font color="#33C7DE">action_listen</font>                                                                                                                   
+                                                                                                                    
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 2                                                                                                                                <font color="#F66151">hey</font> 
+                                                                                                                   intent: greet 1.00 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 0.99</font>                                                                                                                
+      <font color="#2A7BDE">hey there! How may i help you</font>                                                                                                   
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                              
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 4                                                                            <font color="#F66151">I would like to find restaurants in [NewYork](location)</font> 
+                                                                                                                intent: location 1.00 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 5    slot{&quot;location&quot;: &quot;NewYork&quot;}                                                                                                     
+      <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                      
+      <font color="#2A7BDE">Sorry, we don&apos;t operate at this location</font>                                                                                        
+      slot{&quot;check_location&quot;: false}                                                                                                   
+      slot{&quot;location_rerun&quot;: true}                                                                                                    
+      <font color="#33C7DE">utter_ask_location_rerun</font><font color="#FFFFFF"> 0.95</font>                                                                                                   
+      <font color="#2A7BDE">Would you like to search for some other location?</font>                                                                               
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                              
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 6                                                                              <font color="#F66151">okay then get me restaurants from [Gurgaon](location)</font> 
+                                                                                                                intent: location 1.00 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 7    slot{&quot;location&quot;: &quot;Gurgaon&quot;}                                                                                                     
+      <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                      
+      slot{&quot;check_location&quot;: true}                                                                                                    
+      <font color="#33C7DE">utter_ask_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+      <font color="#2A7BDE">what kind of cuisine would you like?                                                                                            </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                        </font>
+<font color="#2A7BDE">      1: Chinese (Chinese)                                                                                                            </font>
+<font color="#2A7BDE">      2: Italian (Italian)                                                                                                            </font>
+<font color="#2A7BDE">      3: South Indian (South Indian)                                                                                                  </font>
+<font color="#2A7BDE">      4: North Indian                                                                                                                 </font>
+<font color="#2A7BDE">      (North Indian)                                                                                                                  </font>
+<font color="#2A7BDE">      5: Mexican (Mexican)                                                                                                            </font>
+<font color="#2A7BDE">      6: American (American)                                                                                                          </font>
+<font color="#2A7BDE">      Type out                                                                                                                        </font>
+<font color="#2A7BDE">      your own message...</font>                                                                                                             
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                              
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 8                                                                  <font color="#F66151">i would prefer [southindian]{&quot;entity&quot;: &quot;cuisine&quot;, &quot;value&quot;: &quot;south </font>
+<font color="#F66151">                                                                                                                             indian&quot;}</font> 
+                                                                                                       intent: restaurant_search 1.00 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 9    slot{&quot;cuisine&quot;: &quot;south indian&quot;}                                                                                                 
+      <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                       
+      slot{&quot;check_cuisine&quot;: true}                                                                                                     
+      <font color="#33C7DE">utter_ask_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+      <font color="#2A7BDE">What price range are you looking at?                                                                                            </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                        </font>
+<font color="#2A7BDE">      1: Lesser                                                                                                                       </font>
+<font color="#2A7BDE">      than Rs. 300 (low)                                                                                                              </font>
+<font color="#2A7BDE">      2: Rs. 300 to 700 (moderate)                                                                                                    </font>
+<font color="#2A7BDE">      3: More                                                                                                                         </font>
+<font color="#2A7BDE">      than 700 (high)                                                                                                                 </font>
+<font color="#2A7BDE">      Type out your own message...</font>                                                                                                    
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                              
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 10                                                                                                      <font color="#F66151">any price [above 800](price)</font> 
+                                                                                                       intent: restaurant_search 1.00 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 11   slot{&quot;price&quot;: &quot;above 800&quot;}                                                                                                      
+      <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+      slot{&quot;price&quot;: &quot;high&quot;}                                                                                                           
+      <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 0.99</font>                                                                                                  
+      <font color="#2A7BDE">-----  Zambar in 3rd Floor, Ambience Mall, Gurgaon rated                                                                        </font>
+<font color="#2A7BDE">      4.0                                                                                                                             </font>
+<font color="#2A7BDE">                                                                                                                                      </font>
+<font color="#2A7BDE">       Khaaja Chowk in 3rd Floor, MGF Metropolitan Mall,                                                                              </font>
+<font color="#2A7BDE">      MG Road, Gurgaon rated 3.6                                                                                                      </font>
+<font color="#2A7BDE">                                                                                                                                      </font>
+<font color="#2A7BDE">       Swagath in SCO 16-17, Main                                                                                                     </font>
+<font color="#2A7BDE">      Market, Sector 29, Gurgaon rated 3.6                                                                                            </font>
+<font color="#2A7BDE">                                                                                                                                      </font>
+<font color="#2A7BDE">       Cafe Rouge -                                                                                                                   </font>
+<font color="#2A7BDE">      Ramada in Ramada Gurgaon Central, Site No.2, Sector 44,                                                                         </font>
+<font color="#2A7BDE">      Gurgaon rated 3.5                                                                                                               </font>
+<font color="#2A7BDE">                                                                                                                                      </font>
+<font color="#2A7BDE">       Shree Rathnam in One Horizon Center,                                                                                           </font>
+<font color="#2A7BDE">      Golf Course Road, Gurgaon rated 3.4                                                                                             </font>
+<font color="#2A7BDE">                                                                                                                                      </font>
+<font color="#2A7BDE">       -----</font>                                                                                                                          
+      slot{&quot;check_results&quot;: true}                                                                                                     
+      <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                        
+      <font color="#2A7BDE">Do you want me to send the details of these top 10                                                                              </font>
+<font color="#2A7BDE">      restaurants over mail ?                                                                                                         </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                        </font>
+<font color="#2A7BDE">      1: yes (yes)                                                                                                                    </font>
+<font color="#2A7BDE">      2: no (no)                                                                                                                      </font>
+<font color="#2A7BDE">      Type out your own message...</font>                                                                                                    
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                              
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 12                                                                                                                   <font color="#F66151">no i don&apos;t need</font> 
+                                                                                                                    intent: deny 1.00 
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 13   <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 0.99</font>                                                                                                              
+      <font color="#2A7BDE">Thank you. Bon Appetit!</font>                                                                                                         
+
+
+</pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 7&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                               <font color="#F66151" size='5'>You       </font> 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                                     
+                                                                                                                         
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                                                                                                  <font color="#F66151">hai</font> 
+                                                                                                                        intent: greet 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 0.99</font>                                                                                                                  
+         <font color="#2A7BDE">Hi, How can I help you!</font>                                                                                                           
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                                
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                        <font color="#F66151">show me some [high](price) budget restaurants in [pondicherry]{&quot;entity&quot;: &quot;location&quot;, &quot;value&quot;: </font>
+   <font color="#F66151">                                                                                                                          &quot;Puducherry&quot;}</font> 
+                                                                                                            intent: restaurant_search 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;location&quot;:                                                                                                                  
+         &quot;Puducherry&quot;}                                                                                                                     
+         slot{&quot;price&quot;: &quot;high&quot;}                                                                                                             
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                        
+         slot{&quot;check_location&quot;: true}                                                                                                      
+         <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 0.99</font>                                                                                                           
+         <font color="#33C7DE">utter_ask_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+         <font color="#2A7BDE">what kind of cuisine would                                                                                                        </font>
+   <font color="#2A7BDE">      you like?                                                                                                                         </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                          </font>
+   <font color="#2A7BDE">      1: Chinese                                                                                                                        </font>
+   <font color="#2A7BDE">      (Chinese)                                                                                                                         </font>
+   <font color="#2A7BDE">      2: Italian                                                                                                                        </font>
+   <font color="#2A7BDE">      (Italian)                                                                                                                         </font>
+   <font color="#2A7BDE">      3: South Indian                                                                                                                   </font>
+   <font color="#2A7BDE">      (South Indian)                                                                                                                    </font>
+   <font color="#2A7BDE">      4: North                                                                                                                          </font>
+   <font color="#2A7BDE">      Indian (North Indian)                                                                                                             </font>
+   <font color="#2A7BDE">      5:                                                                                                                                </font>
+   <font color="#2A7BDE">      Mexican (Mexican)                                                                                                                 </font>
+   <font color="#2A7BDE">      6: American                                                                                                                       </font>
+   <font color="#2A7BDE">      (American)                                                                                                                        </font>
+   <font color="#2A7BDE">      Type out your own                                                                                                                 </font>
+   <font color="#2A7BDE">      message...</font>                                                                                                                        
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                                
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                         <font color="#F66151">[South Indian]{&quot;entity&quot;: &quot;cuisine&quot;, &quot;value&quot;: &quot;south indian&quot;}</font> 
+                                                                                                            intent: restaurant_search 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    slot{&quot;cuisine&quot;: &quot;south                                                                                                            
+         indian&quot;}                                                                                                                          
+         <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+         slot{&quot;check_cuisine&quot;: true}                                                                                                       
+         <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                    
+         <font color="#2A7BDE">-----  Blueline - The                                                                                                             </font>
+   <font color="#2A7BDE">      Promenade in The Promenade,                                                                                                       </font>
+   <font color="#2A7BDE">      23, Goubert Avenue, White                                                                                                         </font>
+   <font color="#2A7BDE">      Town, Puducherry rated 3.8                                                                                                        </font>
+   <font color="#2A7BDE">      -----</font>                                                                                                                             
+         slot{&quot;check_results&quot;: true}                                                                                                       
+         <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 0.00</font>                                                                                                          
+         <font color="#2A7BDE">Do you want me to send the                                                                                                        </font>
+   <font color="#2A7BDE">      details of these top 10                                                                                                           </font>
+   <font color="#2A7BDE">      restaurants over mail ?                                                                                                           </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                          </font>
+   <font color="#2A7BDE">      1: yes (yes)                                                                                                                      </font>
+   <font color="#2A7BDE">      2: no                                                                                                                             </font>
+   <font color="#2A7BDE">      (no)                                                                                                                              </font>
+   <font color="#2A7BDE">      Type out your own                                                                                                                 </font>
+   <font color="#2A7BDE">      message...</font>                                                                                                                        
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                                
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    8                                                                               <font color="#F66151">yes please send me a mail to [upgrad@gmail.com](email)</font> 
+                                                                                                                        intent: email 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    9    slot{&quot;email&quot;:                                                                                                                     
+         &quot;upgrad@gmail.com&quot;}                                                                                                               
+         <font color="#33C7DE">action_send_mail</font><font color="#FFFFFF"> 1.00</font>                                                                                                             
+         <font color="#2A7BDE">Sent!!</font>                                                                                                                            
+         <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 0.88</font>                                                                                                                
+         <font color="#2A7BDE">Thanks for using our service.                                                                                                     </font>
+   <font color="#2A7BDE">      Have a great day, bye</font>                                                                                                             
+   
+   </pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 8&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>
+ #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                              <font color="#F66151" size='5'>You       </font> 
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 1    <font color="#33C7DE">action_listen</font>                                                                                                                    
+                                                                                                                     
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 2                                                                                                                              <font color="#F66151">hello!</font> 
+                                                                                                                    intent: greet 1.00 
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 0.99</font>                                                                                                                 
+      <font color="#2A7BDE">hey there! How may i help you</font>                                                                                                    
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 4                                            <font color="#F66151">I am looking for some [expensive]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;high&quot;} [italian](cuisine) </font>
+<font color="#F66151">                                                                                                     restaurants in [ranchi](location)</font> 
+                                                                                                        intent: restaurant_search 1.00 
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 5    slot{&quot;cuisine&quot;: &quot;italian&quot;}                                                                                                       
+      slot{&quot;location&quot;: &quot;ranchi&quot;}                                                                                                       
+      slot{&quot;price&quot;: &quot;high&quot;}                                                                                                            
+      <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 0.98</font>                                                                                                       
+      slot{&quot;check_location&quot;: true}                                                                                                     
+      <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 0.97</font>                                                                                                        
+      slot{&quot;check_cuisine&quot;: true}                                                                                                      
+      <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 1.00</font>                                                                                                          
+      <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                   
+      <font color="#2A7BDE">-----  Prana in 6th Floor, RS                                                                                                    </font>
+<font color="#2A7BDE">      Square, Near Vishal Mega                                                                                                         </font>
+<font color="#2A7BDE">      Mart,Harmu Road, Ranchi rated 3.7                                                                                                </font>
+<font color="#2A7BDE">      -----</font>                                                                                                                            
+      slot{&quot;check_results&quot;: true}                                                                                                      
+      <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                         
+      <font color="#2A7BDE">Do you want me to send the details                                                                                               </font>
+<font color="#2A7BDE">      of these top 10 restaurants over                                                                                                 </font>
+<font color="#2A7BDE">      mail ?                                                                                                                           </font>
+<font color="#2A7BDE">      Buttons:                                                                                                                         </font>
+<font color="#2A7BDE">      1: yes (yes)                                                                                                                     </font>
+<font color="#2A7BDE">      2: no                                                                                                                            </font>
+<font color="#2A7BDE">      (no)                                                                                                                             </font>
+<font color="#2A7BDE">      Type out your own message...</font>                                                                                                     
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 6                                                                                                                                 <font color="#F66151">yes</font> 
+                                                                                                                   intent: affirm 1.00 
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 7    <font color="#33C7DE">utter_ask_email</font><font color="#FFFFFF"> 0.98</font>                                                                                                             
+      <font color="#2A7BDE">Please provide your email id?</font>                                                                                                    
+      <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                               
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 8                                                                                               <font color="#F66151">mail me at [dummy@hotmail.com](email)</font> 
+                                                                                                                    intent: email 1.00 
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 9    slot{&quot;email&quot;: &quot;dummy@hotmail.com&quot;}                                                                                               
+      <font color="#33C7DE">action_send_mail</font><font color="#FFFFFF"> 1.00</font>                                                                                                            
+      <font color="#2A7BDE">Mail Sent.</font>                                                                                                                       
+
+
+</pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 9&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>Chat History
+
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                                                                                                                                  <font color="#F66151" size='5'>You       </font> 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                                                                                                                        
+                                                                                                                                                                                                            
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                                                                                 <font color="#F66151">hey search me some [chinese](cuisine) restaurants at a [lower price]{&quot;entity&quot;: &quot;price&quot;, &quot;value&quot;: &quot;low&quot;}</font> 
+                                                                                                                                                                                               intent: restaurant_search 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    slot{&quot;cuisine&quot;: &quot;chinese&quot;}                                                                                                                                                                                           
+         slot{&quot;price&quot;: &quot;low&quot;}                                                                                                                                                                                                 
+         <font color="#33C7DE">action_check_cuisine</font><font color="#FFFFFF"> 0.98</font>                                                                                                                                                                                            
+         slot{&quot;check_cuisine&quot;: true}                                                                                                                                                                                          
+         <font color="#33C7DE">action_check_price</font><font color="#FFFFFF"> 0.97</font>                                                                                                                                                                                              
+         <font color="#33C7DE">utter_ask_location</font><font color="#FFFFFF"> 0.94</font>                                                                                                                                                                                              
+         <font color="#2A7BDE">What location are you looking in ?</font>                                                                                                                                                                                   
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                                                                                                                   
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                                                                                                                                                                                <font color="#F66151">in [Faridabad](location)</font> 
+                                                                                                                                                                                                        intent: location 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;location&quot;: &quot;Faridabad&quot;}                                                                                                                                                                                        
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                                                                                                                           
+         slot{&quot;check_location&quot;: true}                                                                                                                                                                                         
+         <font color="#33C7DE">action_search_restaurants</font><font color="#FFFFFF"> 1.00</font>                                                                                                                                                                                       
+         <font color="#2A7BDE">-----  Parkash Dhaba in Shop 32, HUDA Market, Sector 19, Faridabad rated 3.0                                                                                                                                         </font>
+   <font color="#2A7BDE">                                                                                                                                                                                                                           </font>
+   <font color="#2A7BDE">       Rama Vaishnav Bhojnalaya in Shop 140, Main Market, Sector 7, Faridabad rated 3.0                                                                                                                                    </font>
+   <font color="#2A7BDE">      Desire Foods in G 25/22, Main Road, 40 Feet, Molarband Extension, Badarpur Border, Faridabad rated 2.9                                                                                                               </font>
+   <font color="#2A7BDE">                                                                                                                                                                                                                           </font>
+   <font color="#2A7BDE">       Shiksha Fast Food in 13, Near Water Tank, HUDA Market,                                                                                                                                                              </font>
+   <font color="#2A7BDE">      Sector 28, Faridabad rated 2.9                                                                                                                                                                                       </font>
+   <font color="#2A7BDE">                                                                                                                                                                                                                           </font>
+   <font color="#2A7BDE">       Aggarwal Sweets Centre in HR 1B, Pul Pehladpur, Main Suraj Kund Road, Suraj Kund, Faridabad rated 2.9                                                                                                               </font>
+   <font color="#2A7BDE">                                                                                                                                                                                                                           </font>
+   <font color="#2A7BDE">       -----</font>                                                                                                                                                                                                               
+         slot{&quot;check_results&quot;: true}                                                                                                                                                                                          
+         <font color="#33C7DE">utter_ask_top10list</font><font color="#FFFFFF"> 1.00</font>                                                                                                                                                                                             
+         <font color="#2A7BDE">Do you want me to send the details of these top 10 restaurants over mail ?                                                                                                                                           </font>
+   <font color="#2A7BDE">      Buttons:                                                                                                                                                                                                             </font>
+   <font color="#2A7BDE">      1: yes (yes)                                                                                                                                                                                                         </font>
+   <font color="#2A7BDE">      2: no (no)                                                                                                                                                                                                           </font>
+   <font color="#2A7BDE">      Type out your own message...</font>                                                                                                                                                                                         
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                                                                                                                   
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                                                                                                                                                  <font color="#F66151">don&apos;t send me any mail</font> 
+                                                                                                                                                                                                            intent: deny 1.00 
+   ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 0.98</font>                                                                                                                                                                                                   
+         <font color="#2A7BDE">Thanks for using our service. Have a great day, bye</font>                                                                                                                                                                  
+   
+   
+   </pre></center>
+
+<hr>
+<center><hr style="width:30%;display: inline-block;"><p style="font-size: large;display: inline-block;"><b>&emsp;Test story 10&emsp;</b></p><hr style="width:30%;display: inline-block;"></center>
+<hr>
+<center><pre>Chat History
+
+    #         <font color="#2A7BDE" size='5'>Bot      </font>                                                                               <font color="#F66151" size='5'>You       </font> 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    1    <font color="#33C7DE">action_listen</font>                                                                                                     
+                                                                                                         
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    2                                                                                                          <font color="#F66151">hello there</font> 
+                                                                                                        intent: greet 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    3    <font color="#33C7DE">utter_greet</font><font color="#FFFFFF"> 0.99</font>                                                                                                  
+         <font color="#2A7BDE">Hi, How can I help you!</font>                                                                                           
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    4                                                             <font color="#F66151">I am looking for some restaurants in [Ontario](location)</font> 
+                                                                                                     intent: location 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    5    slot{&quot;location&quot;: &quot;Ontario&quot;}                                                                                       
+         <font color="#33C7DE">action_check_location</font><font color="#FFFFFF"> 1.00</font>                                                                                        
+         <font color="#2A7BDE">Sorry, we don&apos;t provide service to this location</font>                                                                  
+         slot{&quot;check_location&quot;: false}                                                                                     
+         slot{&quot;location_rerun&quot;: true}                                                                                      
+         <font color="#33C7DE">utter_ask_location_rerun</font><font color="#FFFFFF"> 0.95</font>                                                                                     
+         <font color="#2A7BDE">Would you like to search for some other location?</font>                                                                 
+         <font color="#33C7DE">action_listen</font><font color="#FFFFFF"> 1.00</font>                                                                                                
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    6                                                                                                            <font color="#F66151">no thanks</font> 
+                                                                                                         intent: deny 1.00 
+   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+    7    <font color="#33C7DE">utter_deny</font><font color="#FFFFFF"> 1.00</font>                                                                                                   
+         <font color="#2A7BDE">Sorry, hope to serve you better next time.</font>                                                                        
+         <font color="#33C7DE">utter_goodbye</font><font color="#FFFFFF"> 1.00</font>                                                                                                
+         <font color="#2A7BDE">Thanks for using our service. Have a great day, bye</font>                                                               
+   
+   </pre></center>
+</body>
+</html>
